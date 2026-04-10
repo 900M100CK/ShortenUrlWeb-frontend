@@ -17,7 +17,7 @@
     <div v-if="error" class="error">{{ error }}</div>
 
     <div v-if="result" class="result">
-      <span>{{ result.shortUrl }}</span>
+      <a :href="result.shortUrl" target="_blank" rel="noreferrer">{{ result.shortUrl }}</a>
       <button @click="copyToClipboard(result.shortUrl)">Copy</button>
     </div>
   </div>
