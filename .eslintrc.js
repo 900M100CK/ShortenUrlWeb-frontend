@@ -6,13 +6,7 @@ module.exports = {
     es2021: true
   },
   parser: 'vue-eslint-parser',
-  parserOptions: {
-    parser: '@babel/eslint-parser',
-    requireConfigFile: false,
-    ecmaVersion: 2021,
-    sourceType: 'module',
-    extraFileExtensions: ['.vue']
-  },
+
   globals: {
     defineProps: 'readonly',
     defineEmits: 'readonly',
