@@ -24,7 +24,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, defineEmits } from 'vue'
 import { shortenApi } from '@/services/api'
 
 const originalUrl = ref('')

@@ -1,5 +1,9 @@
 module.exports = {
-  presets: [
-    '@vue/cli-plugin-babel/preset'
-  ]
+  parserOptions: {
+    parser: '@babel/eslint-parser',
+    requireConfigFile: false, // 👈 Thêm dòng này
+    babelOptions: {
+      presets: ['@babel/preset-env']
+    }
+  },
 }

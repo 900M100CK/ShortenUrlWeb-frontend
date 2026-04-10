@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, defineExpose } from 'vue'
 import { shortenApi } from '@/services/api'
 
 const list = ref([])
