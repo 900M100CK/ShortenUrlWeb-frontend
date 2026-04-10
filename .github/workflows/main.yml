@@ -46,6 +46,17 @@ jobs:
     needs: build_and_push_docker
 
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
       - name: Trigger Vercel Deploy
         run: vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
         env:
@@ -55,5 +66,5 @@ jobs:
       - name: Write Deployment Summary
         run: |
           echo "### Frontend Deployed" >> $GITHUB_STEP_SUMMARY
-          echo "Docker image: ${{ secrets.DOCKER_USERNAME }}/shorten-url-frontend:${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "Docker: ${{ secrets.DOCKER_USERNAME }}/shorten-url-frontend:${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
           echo "Vercel: production" >> $GITHUB_STEP_SUMMARY
