@@ -8,20 +8,14 @@
         </div>
       </div>
     </header>
-
     <main class="main">
       <RouterView />
     </main>
-
     <footer class="footer">
       <p>Shortly © {{ new Date().getFullYear() }}</p>
     </footer>
   </div>
 </template>
-
-<script setup>
-import { RouterView } from 'vue-router'
-</script>
 
 <style>
 /* Reset */
@@ -30,7 +24,6 @@ import { RouterView } from 'vue-router'
   margin: 0;
   padding: 0;
 }
-
 /* Root variables */
 :root {
   --primary:       #6c63ff;
@@ -45,7 +38,6 @@ import { RouterView } from 'vue-router'
   --radius:        12px;
   --shadow:        0 2px 16px rgba(0,0,0,.08);
 }
-
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
   background: var(--bg);
@@ -54,13 +46,11 @@ body {
   display: flex;
   flex-direction: column;
 }
-
 #app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-
 /* Header */
 .header {
   background: var(--surface);
@@ -69,7 +59,6 @@ body {
   top: 0;
   z-index: 10;
 }
-
 .header-inner {
   max-width: 860px;
   margin: 0 auto;
@@ -78,25 +67,21 @@ body {
   display: flex;
   align-items: center;
 }
-
 .logo {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-
 .logo-icon {
   font-size: 22px;
   color: var(--primary);
 }
-
 .logo-text {
   font-size: 20px;
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.5px;
 }
-
 /* Main */
 .main {
   flex: 1;
@@ -105,7 +90,6 @@ body {
   margin: 0 auto;
   padding: 40px 24px;
 }
-
 /* Footer */
 .footer {
   text-align: center;
@@ -114,7 +98,6 @@ body {
   color: var(--text-muted);
   border-top: 1px solid var(--border);
 }
-
 /* Shared component styles */
 .card {
   background: var(--surface);
@@ -123,7 +106,6 @@ body {
   box-shadow: var(--shadow);
   padding: 28px;
 }
-
 input[type="url"],
 input[type="text"] {
   width: 100%;
@@ -136,12 +118,10 @@ input[type="text"] {
   outline: none;
   transition: border-color .2s;
 }
-
 input[type="url"]:focus,
 input[type="text"]:focus {
   border-color: var(--primary);
 }
-
 button {
   cursor: pointer;
   border: none;
@@ -153,22 +133,18 @@ button {
   color: #fff;
   transition: background .2s, opacity .2s;
 }
-
 button:hover:not(:disabled) {
   background: var(--primary-hover);
 }
-
 button:disabled {
   opacity: .5;
   cursor: not-allowed;
 }
-
 .error-msg {
   color: var(--error);
   font-size: 13px;
   margin-top: 8px;
 }
-
 .success-msg {
   color: var(--success);
   font-size: 13px;
